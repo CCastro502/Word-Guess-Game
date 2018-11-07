@@ -28,8 +28,20 @@ function gameRestart() {
     findWord();
 }
 
+if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x")(userGuess === "y") || (userGuess === "z")) {
+    userGuesses.push(userGuess);
+    for (i=0; i < computerGuess.length; i++) {
+      console.log(computerGuess[i]);
+    }
+
+
 function keyPress() {
     starts when key is pressed.
 }
 
+function letterCheck(word) {
+    for (i = 0; i < word.length; i++) {
+
+    }
+}
 // array that holds the random words the game might play (wordArray). function (guessesAllowed) that holds a 'let' variable that contains the number of letter guesses allowed (guesses), starts at 10, calls on gameRestart function once guessesAllowed = 0. function (guessedLetters) that holds array that holds guessed letters (letters); when game restarts, function eliminates all values from the array. function to restart the game once 10 guesses has been made (gameRestart). function to find the random word(randWord) from wordArray. function to loop over letters in randWord with letter guessed by user. function that grabs the letter typed by user, and calls the function the loops over the word. looping function
