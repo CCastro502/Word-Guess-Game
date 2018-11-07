@@ -8,10 +8,10 @@ var randWord = "";
 
 function guessesAllowed(guessedLetters, key-pressed) {
     // When a guess is made by the user, guesses is iterated down by 1
-    
-    if (key-is-pressed) {
+
+    if (key - is - pressed) {
         guesses = guesses--
-        guessedLetters.push(key-pressed)
+        guessedLetters.push(key - pressed)
     }
     console.log(guesses)
     gameRestart();
@@ -28,11 +28,14 @@ function gameRestart() {
     findWord();
 }
 
-if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x")(userGuess === "y") || (userGuess === "z")) {
-    userGuesses.push(userGuess);
-    for (i=0; i < computerGuess.length; i++) {
-      console.log(computerGuess[i]);
+function wordCheck() {
+    if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x")(userGuess === "y") || (userGuess === "z")) {
+        userGuesses.push(userGuess);
+        for (i = 0; i < computerGuess.length; i++) {
+            console.log(computerGuess[i]);
+        }
     }
+}
 
 
 function keyPress() {
