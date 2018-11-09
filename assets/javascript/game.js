@@ -29,26 +29,28 @@ function scrambledWord(string) {
 }
 var unknownWord = scrambledWord(computerWord);
 
-// Create variables that hold references to the places in the HTML where we want to display things.
 var directionsText = document.getElementById("directions-text");
 var userChoiceText = document.getElementById("userchoice-text");
-var computerChoiceText = document.getElementById("computerchoice-text");
-var userGuessList = document.getElementById("userguesslist-text")
+var userGuessList = document.getElementById("userguesslist-text");
+var unscrambledWordText = document.getElementById("unscrambledword-text");
+var winsText = document.getElementById("wins-text");
+var tiesText = document.getElementById("ties-text");
+var lossesText = document.getElementById("losses-text");
 
-// This function is run whenever the user presses a key.
 document.onkeyup = function (event) {
 
-    // Determines which key was pressed.
     var userGuess = event.key;
 
     if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l") || (userGuess === "m") || (userGuess === "n") || (userGuess === "o") || (userGuess === "p") || (userGuess === "q") || (userGuess === "r") || (userGuess === "s") || (userGuess === "t") || (userGuess === "u") || (userGuess === "v") || (userGuess === "w") || (userGuess === "x") || (userGuess === "y") || (userGuess === "z")) {
         userGuesses.push(userGuess);
-        // // Hide the directions
         directionsText.textContent = "";
 
-        // Display the user and computer guesses, and wins/losses/ties.
         userChoiceText.textContent = "You chose: " + userGuess;
         userGuessList.textContent = "You have guessed: " + userGuesses;
+        unscrambledWordText.textContent = "The word is: " + unknownWord;
+        winsText.textContent = "Wins: " + wins;
+        tiesText.textContent = "Ties: " + ties;
+        lossesText.textContent = "Losses: " + losses;
         wordChecker(userGuess)
     } else {
         alert("You did not enter an alphabetical character.")
@@ -56,10 +58,20 @@ document.onkeyup = function (event) {
 };
 
 function wordChecker(input) {
-    console.log(input);
-    for (i = 0; i < computerWord.length; i++) {
-        if (computerWord.includes(input)) {
-            alert("You guessed a correct character")
+    if (computerWord.includes(input)) {
+        alert("You guessed a correct character")
+        unscrambledWord(input, unknownWord, computerWord)
+    } else {
+        alert("You guessed an incorrect character")
+    }
+}
+
+function unscrambledWord(character, scrmbldword, word) {
+    for (k = 0; k < word.length; k++) {
+        if (character == word[k]) {
+            var tempLetter = word[k];
+            tempWord = scrmbldword.replace(scrmbldword[k], character);
+            console.log(tempWord);
         }
     }
 }
